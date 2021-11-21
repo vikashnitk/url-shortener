@@ -1,4 +1,34 @@
-{% for url in vals %}
-    <p><strong>Short Url:</strong>https://url-shortener-v.herokuapp.com/{{url.short}}<strong>Total number of hits:</strong> {{url.visits}}<strong>Hourly visit:</strong> {{url.hourly_visit}}</p>
-{% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
 
+<div class="container">          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Short Url</th>
+        <th>Total number of hits</th>
+        <th>Hourly hits</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for url in vals %}
+        <tr>
+          <td>http://127.0.0.1:5000/{{url.short}}</td>
+          <td>{{url.visits}}</td>
+          <td>{{url.hourly_visit}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
