@@ -1,0 +1,4 @@
+{% for url in vals %}
+    <p><strong>Short Url:</strong>http://127.0.0.1:5000/{{url.short}}<strong>Total number of hits:</strong> {{url.visits}}<strong>Hourly visit:</strong> {{url.hourly_visit}}</p>
+{% endfor %}
+
