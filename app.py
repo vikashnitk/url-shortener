@@ -4,6 +4,7 @@ from datetime import datetime
 import random
 import string
 import os
+from db import db
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///sqlite.db')
@@ -93,6 +94,6 @@ def search(search_term):
 
 
 if __name__ == '__main__':
-	from db import db
-    db.init_app(app)
+	
+	db.init_app(app)
 	app.run(port=5000, debug=True)
