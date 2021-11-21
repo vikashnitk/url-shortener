@@ -9,8 +9,6 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sqlite.db'    #os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)
-
 class Urls(db.Model):
 	id_ = db.Column("id_", db.Integer, primary_key=True)
 	long = db.Column("long", db.String())
@@ -95,4 +93,6 @@ def search(search_term):
 
 
 if __name__ == '__main__':
+	from db import db
+    db.init_app(app)
 	app.run(port=5000, debug=True)
