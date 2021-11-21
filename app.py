@@ -7,7 +7,7 @@ import os
 from db import db
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')  #'sqlite:///sqlite.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///sqlite.db')  
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 class Urls(db.Model):
@@ -86,7 +86,7 @@ def display_all():
 
 @app.route('/search/<search_term>')
 def search(search_term):    
-	results = Urls.query.filter(Urls.long.like('%'+search_term+'%')).all()
+	results = Urls.query.filter(Urls.long.like('%'+search_term.lower()+'%')).all()
 	if results:
 		return render_template('search.html', vals=results)
 	else:
