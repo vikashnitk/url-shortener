@@ -7,7 +7,8 @@ import os
 from db import db
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///sqlite.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('postgresql://ugwipwerngbmsy:72fc100aa614368c9e62345e2910d27339b114edf3342a03037a276a1517cecc@ec2-23-23-199-57.compute-1.amazonaws.com:5432/dmqi3ga03uerf', 
+	                                                      'sqlite:///sqlite.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 class Urls(db.Model):
