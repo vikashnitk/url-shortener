@@ -85,5 +85,17 @@ Say the term “Python”, API will return all pages which have a partial or ful
 
   
   https://url-shortener-v.herokuapp.com/
+  
+  
+#### Statistics
+ 
+  https://url-shortener-v.herokuapp.com/stats
+  
+  
+#### Search
+
+```bash
+  https://url-shortener-v.herokuapp.com/search/<search-term>
+ ```
 
 
