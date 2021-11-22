@@ -66,9 +66,9 @@ When a user opens the short URL they will be redirected to the long URL location
 #### Statistics
 
 API stores the metadata about short URL - total number of hits, hourly hits. It is available at:
-```bash
+
   http://127.0.0.1:5000/stats
-  ```
+ 
 #### Search
 
 API have an endpoint for search. Search returns results matching the title of the URL
