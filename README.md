@@ -65,7 +65,7 @@ When a user opens the short URL they will be redirected to the long URL location
 
 #### Statistics
 
-API stores the metadata about short URL - total number of hits, hourly hits. It is available at:
+API stores the metadata about short URL - total number of hits, hourly hits. It can be accessed at:
 
   http://127.0.0.1:5000/stats
  
